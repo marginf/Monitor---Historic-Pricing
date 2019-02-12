@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Aerodrive (Aus)</name>
+   <tag>Historic Market Pricing</tag>
+   <comment></comment>
+   <testCaseGuid>30e04f99-2505-4f18-bb6b-18565d023eb4</testCaseGuid>
+   <variable>
+      <defaultValue>'54321'</defaultValue>
+      <description>User Password</description>
+      <id>da365dc1-2709-4c09-a30a-d1cfb8e0af6f</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+   <variable>
+      <defaultValue>'c8df74d6-1c73-4e7d-af4d-ffa3c1717f59'</defaultValue>
+      <description>Australian Market</description>
+      <id>b28bb291-3e28-4402-b2cf-341bf72824a6</id>
+      <masked>false</masked>
+      <name>Australia</name>
+   </variable>
+   <variable>
+      <defaultValue>'a294f92e-0f69-40ad-b3fa-0541c9ed426a'</defaultValue>
+      <description>Mexico Market</description>
+      <id>af3cd398-d08a-4728-8de1-8c93347179c2</id>
+      <masked>false</masked>
+      <name>Mexico</name>
+   </variable>
+   <variable>
+      <defaultValue>'75780ae2-0017-491d-a448-a35d15bf89bc'</defaultValue>
+      <description>USA Market</description>
+      <id>68ecd868-a54c-4a38-ab89-8cecaf63abf0</id>
+      <masked>false</masked>
+      <name>USA</name>
+   </variable>
+   <variable>
+      <defaultValue>'70f5f79f-e17f-414f-959d-d3c130fa66cc'</defaultValue>
+      <description>UK Market</description>
+      <id>307e1d62-4373-487c-8a43-72428eb14046</id>
+      <masked>false</masked>
+      <name>UK</name>
+   </variable>
+   <variable>
+      <defaultValue>'1b963b1f-5ccf-436c-b965-38b18aa0588b'</defaultValue>
+      <description>Canada Market</description>
+      <id>e4aa6b65-7a45-4579-aec4-d2e2b6bedb70</id>
+      <masked>false</masked>
+      <name>Canada</name>
+   </variable>
+   <variable>
+      <defaultValue>'33d97d2f-3d15-4dbf-9df6-7c2c4ee376ff'</defaultValue>
+      <description>NZ Market</description>
+      <id>35329c7d-e9ca-40eb-beb2-74efab5319d1</id>
+      <masked>false</masked>
+      <name>NZ</name>
+   </variable>
+</TestCaseEntity>

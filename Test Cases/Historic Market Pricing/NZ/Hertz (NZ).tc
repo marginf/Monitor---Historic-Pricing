@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Hertz (NZ)</name>
+   <tag>Historic Market Pricing</tag>
+   <comment></comment>
+   <testCaseGuid>a713900c-983e-41b5-b041-1e2a35a1673b</testCaseGuid>
+   <variable>
+      <defaultValue>'54321'</defaultValue>
+      <description>User Password</description>
+      <id>13a7b9ce-f503-4a50-9b5c-5fa9689a4937</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+   <variable>
+      <defaultValue>'c8df74d6-1c73-4e7d-af4d-ffa3c1717f59'</defaultValue>
+      <description>Australian Market</description>
+      <id>3189b856-fa56-4b68-8f26-1230689f2b56</id>
+      <masked>false</masked>
+      <name>Australia</name>
+   </variable>
+   <variable>
+      <defaultValue>'a294f92e-0f69-40ad-b3fa-0541c9ed426a'</defaultValue>
+      <description>Mexico Market</description>
+      <id>666152a7-80fe-46bc-81f9-358e1ecf27bf</id>
+      <masked>false</masked>
+      <name>Mexico</name>
+   </variable>
+   <variable>
+      <defaultValue>'75780ae2-0017-491d-a448-a35d15bf89bc'</defaultValue>
+      <description>USA Market</description>
+      <id>354623d9-151c-4dcc-9fa2-c325d73b37e1</id>
+      <masked>false</masked>
+      <name>USA</name>
+   </variable>
+   <variable>
+      <defaultValue>'70f5f79f-e17f-414f-959d-d3c130fa66cc'</defaultValue>
+      <description>UK Market</description>
+      <id>9cc08eb2-aa66-4903-b999-bb119c820b10</id>
+      <masked>false</masked>
+      <name>UK</name>
+   </variable>
+   <variable>
+      <defaultValue>'1b963b1f-5ccf-436c-b965-38b18aa0588b'</defaultValue>
+      <description>Canada Market</description>
+      <id>6499edc3-e850-41cc-a135-34ea96f9b7e0</id>
+      <masked>false</masked>
+      <name>Canada</name>
+   </variable>
+   <variable>
+      <defaultValue>'33d97d2f-3d15-4dbf-9df6-7c2c4ee376ff'</defaultValue>
+      <description>NZ Market</description>
+      <id>24d2e197-b5a4-4c3a-8a9a-5e7885c40d9c</id>
+      <masked>false</masked>
+      <name>NZ</name>
+   </variable>
+</TestCaseEntity>

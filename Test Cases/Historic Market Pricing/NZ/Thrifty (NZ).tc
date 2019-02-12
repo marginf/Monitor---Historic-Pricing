@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Thrifty (NZ)</name>
+   <tag>Historic Market Pricing</tag>
+   <comment></comment>
+   <testCaseGuid>f074104d-860b-4121-8c3e-aac3154b0fda</testCaseGuid>
+   <variable>
+      <defaultValue>'54321'</defaultValue>
+      <description>User Password</description>
+      <id>edbfae35-3f7c-47d8-91cf-4ccdfd52659d</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+   <variable>
+      <defaultValue>'c8df74d6-1c73-4e7d-af4d-ffa3c1717f59'</defaultValue>
+      <description>Australian Market</description>
+      <id>da51666b-c09b-4207-a4f1-9e638be70e4d</id>
+      <masked>false</masked>
+      <name>Australia</name>
+   </variable>
+   <variable>
+      <defaultValue>'a294f92e-0f69-40ad-b3fa-0541c9ed426a'</defaultValue>
+      <description>Mexico Market</description>
+      <id>7928e8dd-7612-410e-be60-a04c3fd9af29</id>
+      <masked>false</masked>
+      <name>Mexico</name>
+   </variable>
+   <variable>
+      <defaultValue>'75780ae2-0017-491d-a448-a35d15bf89bc'</defaultValue>
+      <description>USA Market</description>
+      <id>ca627f82-ace5-4852-93fe-f89772d6422f</id>
+      <masked>false</masked>
+      <name>USA</name>
+   </variable>
+   <variable>
+      <defaultValue>'70f5f79f-e17f-414f-959d-d3c130fa66cc'</defaultValue>
+      <description>UK Market</description>
+      <id>eb350fad-61e7-45d8-b8e9-5d883ed3ede4</id>
+      <masked>false</masked>
+      <name>UK</name>
+   </variable>
+   <variable>
+      <defaultValue>'1b963b1f-5ccf-436c-b965-38b18aa0588b'</defaultValue>
+      <description>Canada Market</description>
+      <id>488f4cdb-f1ac-41b3-a2af-bc430da2696a</id>
+      <masked>false</masked>
+      <name>Canada</name>
+   </variable>
+   <variable>
+      <defaultValue>'33d97d2f-3d15-4dbf-9df6-7c2c4ee376ff'</defaultValue>
+      <description>NZ Market</description>
+      <id>04c698c9-bd45-485a-8d2f-482dfc123479</id>
+      <masked>false</masked>
+      <name>NZ</name>
+   </variable>
+</TestCaseEntity>
