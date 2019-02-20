@@ -8,7 +8,9 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
 import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
@@ -42,22 +44,22 @@ WebUI.click(findTestObject('Historic Pricing/Category Type'))
 
 // Select Pickup Location
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Pickup Location'),'Auckland Airport', false) 
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Pickup Location'),0) 
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
 
 // Select Dropoff Location
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Dropoff Location'),'Auckland', false)
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Dropoff Location'),0)
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
 
 // Select Category Type
 WebUI.click(findTestObject('Historic Pricing/Category'))
-WebUI.selectOptionByValue(findTestObject('Historic Pricing/Category'),'5b7e44c1-88eb-4eb4-81fb-a3c626d9a340', false) // Intermediate Hatch or Sedan Car Rental
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Category'),3)//'5b7e44c1-88eb-4eb4-81fb-a3c626d9a340' - Intermediate Hatch or Sedan Car Rental
 WebUI.click(findTestObject('Historic Pricing/Category'))
 
 // Select Duration
 WebUI.click(findTestObject('Historic Pricing/Duration'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Duration'),'1', false)
+WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Duration'),'14', false)
 WebUI.click(findTestObject('Historic Pricing/Duration'))
 
 // Select Extract Date From
@@ -79,6 +81,7 @@ WebUI.click(findTestObject('Historic Pricing/Search Button'))
 WebUI.waitForPageLoad(10)
 
 // Select Down Arrow
+WebUI.waitForElementClickable(findTestObject('Historic Pricing/Space Button'), 1)
 WebUI.click(findTestObject('Historic Pricing/Space Button'))
 
 // Select All Competitors Checkbox
@@ -105,9 +108,19 @@ WebUI.click(findTestObject('Historic Pricing/Download_CSV Button'))
 
 // Select Copy button
 //WebUI.scrollToElement(findTestObject('Historic Pricing/Tooltip'),1)
+WebUI.waitForElementClickable(findTestObject('Historic Pricing/Copy Button'),2)
 WebUI.focus(findTestObject('Historic Pricing/Copy Button'))
 WebUI.click(findTestObject('Historic Pricing/Copy Button'))
 WebUI.verifyTextPresent('Copy to clipboard', false)
+
+// Upload CSV File
+//'Passing the path of the file'
+//WebUI.uploadFile(findTestObject('Historic Pricing/Upload File'), 'C:\\Users\\robin\\Downloads\\Car Rental - Portal.csv')
+//newTestData = findTestData('Historic Pricing/Upload File')
+//'Capturing the file name after upload and storing it in a variable'
+//FilePath = WebUI.getAttribute(findTestObject('Historic Pricing/Upload File'), 'value')
+//'Verifying the Actual path and Expected path of file'
+//WebUI.verifyMatch(FilePath, 'C:\\Users\\robin\\Downloads\\Car Rental - Portal.csv', false)
 
 //Change to number of records viewed
 WebUI.click(findTestObject('Historic Pricing/Display Records'))

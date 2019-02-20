@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Search Button</name>
+   <name>Upload File</name>
    <tag></tag>
-   <elementGuidId>dfc5ee69-db01-4ca2-b494-cc31e5754221</elementGuidId>
+   <elementGuidId>e74359fb-437c-4986-8eb8-42f128888814</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[3]/div[1]/div/div/div/fieldset/div/div[5]/div[2]/div/div/button</value>
+         <value>//*[@id = 'Upload File']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -15,22 +15,15 @@
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath</name>
+      <name>id</name>
       <type>Main</type>
-      <value>/html/body/div[3]/div[1]/div/div/div/fieldset/div/div[5]/div[2]/div/div/button</value>
+      <value>Upload File</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>tag</name>
+      <name>type</name>
       <type>Main</type>
-      <value>button</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>btn-sm btn-success</value>
+      <value>csv</value>
    </webElementProperties>
 </WebElementEntity>

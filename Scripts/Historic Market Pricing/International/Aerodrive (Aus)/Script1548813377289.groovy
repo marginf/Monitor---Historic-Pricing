@@ -79,6 +79,7 @@ WebUI.click(findTestObject('Historic Pricing/Search Button'))
 WebUI.waitForPageLoad(10)
 
 // Select Down Arrow
+WebUI.waitForElementClickable(findTestObject('Historic Pricing/Space Button'),1)
 WebUI.click(findTestObject('Historic Pricing/Space Button'))
 
 // Select All Competitors Checkbox
