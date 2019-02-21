@@ -8,21 +8,23 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import org.testng.Assert as Assert
+import org.openqa.selenium.By as By
+import org.openqa.selenium.WebDriver as WebDriver
+import org.openqa.selenium.WebElement as WebElement
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 WebUI.openBrowser('')
 
 //Logs User into MF')
 WebUI.navigateToUrl('https://marginfueltest.azurewebsites.net/Home/Login')
 WebUI.maximizeWindow()
-WebUI.setText(findTestObject('Global Objects/input_Username'), 'PTAerodrive')
+WebUI.setText(findTestObject('Global Objects/input_Username'), 'PTJucy')
 WebUI.setText(findTestObject('Global Objects/input_Password'), Password)
 WebUI.click(findTestObject('Global Objects/button_Login'))
 
@@ -44,63 +46,104 @@ WebUI.click(findTestObject('Historic Pricing/Category Type'))
 
 // Select Pickup Location
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
-WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Pickup Location'),0) 
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Pickup Location'),0) //'Auckland Airport' 
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
 
 // Select Dropoff Location
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
-WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Dropoff Location'),0)
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Dropoff Location'),0) //'Auckland Airport'
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
 
 // Select Category Type
 WebUI.click(findTestObject('Historic Pricing/Category'))
-WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Category'),3)//'5b7e44c1-88eb-4eb4-81fb-a3c626d9a340' - Intermediate Hatch or Sedan Car Rental
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Category'),3) //'ce925f44-8dfa-409c-bdf6-7b250edd4993' Styla (Mazda 3 (2015-2017))
 WebUI.click(findTestObject('Historic Pricing/Category'))
 
-// Select Duration
+// Select Dropoff Location
 WebUI.click(findTestObject('Historic Pricing/Duration'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Duration'),'14', false)
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Duration'),4) // '10'
 WebUI.click(findTestObject('Historic Pricing/Duration'))
 
 // Select Extract Date From
 WebUI.click(findTestObject('Historic Pricing/Extract Date From'))
 //WebUI.click(findTestObject('Historic Pricing/Date Arrow Left'))
 //WebUI.click(findTestObject('Historic Pricing/Date From 1st'))
+//WebUI.getText(findTestObject('Historic Pricing/Extract Date From - Text'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date From'), Keys.chord(Keys.CONTROL, 'a'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date From'), Keys.chord(Keys.CONTROL, 'c'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date From - Text'), Keys.chord(Keys.CONTROL, 'v'))
+WebUI.getText(findTestObject('Historic Pricing/Extract Date From - Text'))
+ExtractFromDate = WebUI.getText(findTestObject('Historic Pricing/Extract Date From - Text'))
 
 // Select Extract Date To
 WebUI.click(findTestObject('Historic Pricing/Extract Date To'))
 //WebUI.click(findTestObject('Historic Pricing/Date Arrow Left'))
 //WebUI.click(findTestObject('Historic Pricing/Date From 1st'))
+//WebUI.getText(findTestObject('Historic Pricing/Extract Date To - Text'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date To'), Keys.chord(Keys.CONTROL, 'a'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date To'), Keys.chord(Keys.CONTROL, 'c'))
+//WebUI.sendKeys(findTestObject('Historic Pricing/Extract Date To - Text'), Keys.chord(Keys.CONTROL, 'v'))
+ExtractToDate = WebUI.getText(findTestObject('Historic Pricing/Extract Date To - Text'))
 
 // Select Pickup Date
 WebUI.click(findTestObject('Historic Pricing/Pickup Date'))
 //WebUI.click(findTestObject('Historic Pricing/Pickup Date From 1st'))
+WebUI.getText(findTestObject('Historic Pricing/Pickup Date - Text'))
 
 // Select Search button
+WebUI.waitForElementClickable(findTestObject('Historic Pricing/Search Button'),2)
 WebUI.click(findTestObject('Historic Pricing/Search Button'))
 WebUI.waitForPageLoad(10)
 
 // Select Down Arrow
-WebUI.waitForElementClickable(findTestObject('Historic Pricing/Space Button'), 1)
+WebUI.waitForElementClickable(findTestObject('Historic Pricing/Space Button'),2)
 WebUI.click(findTestObject('Historic Pricing/Space Button'))
 
 // Select All Competitors Checkbox
 WebUI.check(findTestObject('Historic Pricing/All Competitors checkbox'))
 
-//Hover Mouse over graph to get Tooltip
-WebUI.scrollToElement(findTestObject('Historic Pricing/Tooltip'),1)
-WebUI.mouseOver(findTestObject('Historic Pricing/Tooltip'))
-WebUI.getText(findTestObject('Historic Pricing/Tooltip'))
-WebUI.verifyTextPresent('Daily Rate',false)
-WebUI.clickOffset(findTestObject('Historic Pricing/Tooltip'), 810, 685)
-WebUI.getText(findTestObject('Historic Pricing/Tooltip'))
-WebUI.verifyTextPresent('Daily Rate',false)
-WebUI.clickOffset(findTestObject('Historic Pricing/Tooltip'), 479, 63)
-WebUI.getText(findTestObject('Historic Pricing/Tooltip'))
-WebUI.verifyTextPresent('Daily Rate',false)
-WebUI.clickOffset(findTestObject('Historic Pricing/Tooltip'), 841, 1113)
-WebUI.getText(findTestObject('Historic Pricing/Tooltip'))
-WebUI.verifyTextPresent('Daily Rate',false)
+//Change to number of records viewed
+WebUI.click(findTestObject('Historic Pricing/Display Records'))
+WebUI.selectOptionByValue(findTestObject('Historic Pricing/Display Records'),'100',false)
+WebUI.click(findTestObject('Historic Pricing/Display Records'))
+
+WebDriver driver = DriverFactory.getWebDriver()
+'Expected value from Table'
+String ExpectedValue = "Toyota Corolla or Similar Compact (Automatic Transmission)";
+'To locate table'
+WebElement Table = driver.findElement(By.xpath("//table/tbody"))
+'To locate rows of table it will Capture all the rows available in the table'
+List<WebElement> rows_table = Table.findElements(By.tagName('tr'))
+'To calculate no of rows In table'
+int rows_count = rows_table.size()
+'Loop will execute for all the rows of the table'
+Loop:
+for (int row = 0; row < rows_count; row++) {
+'To locate columns(cells) of that specific row'
+List<WebElement> Columns_row = rows_table.get(row).findElements(By.tagName('td'))
+ 
+'To calculate no of columns(cells) In that specific row'
+int columns_count = Columns_row.size()
+ 
+println((('Number of cells In Row ' + row) + ' are ') + columns_count)
+ 
+'Loop will execute till the last cell of that specific row'
+for (int column = 0; column < columns_count; column++) {
+'It will retrieve text from each cell'
+String celltext = Columns_row.get(column).getText()
+ 
+println((((('Cell Value Of row number ' + row) + ' and column number ') + column) + ' Is ') + celltext)
+ 
+'Checking if Cell text is matching with the expected value'
+if (celltext == ExpectedValue) {
+'Getting the Model Name if cell text i.e Model name matches with Expected value'
+println('Text present in row number 3 is: ' + Columns_row.get(2).getText())
+ 
+'After getting the Expected value from Table we will Terminate the loop'
+break Loop;
+}
+}
+}
 
 // Click to download csv file (verify file has been downloaded)
 WebUI.focus(findTestObject('Historic Pricing/Download_CSV Button'))
@@ -108,59 +151,11 @@ WebUI.click(findTestObject('Historic Pricing/Download_CSV Button'))
 
 // Select Copy button
 //WebUI.scrollToElement(findTestObject('Historic Pricing/Tooltip'),1)
-WebUI.waitForElementClickable(findTestObject('Historic Pricing/Copy Button'),2)
 WebUI.focus(findTestObject('Historic Pricing/Copy Button'))
 WebUI.click(findTestObject('Historic Pricing/Copy Button'))
 WebUI.verifyTextPresent('Copy to clipboard', false)
+WebUI.getText(findTestObject('Historic Pricing/Copy Button'))
 
-// Upload CSV File
-//'Passing the path of the file'
-//WebUI.uploadFile(findTestObject('Historic Pricing/Upload File'), 'C:\\Users\\robin\\Downloads\\Car Rental - Portal.csv')
-//newTestData = findTestData('Historic Pricing/Upload File')
-//'Capturing the file name after upload and storing it in a variable'
-//FilePath = WebUI.getAttribute(findTestObject('Historic Pricing/Upload File'), 'value')
-//'Verifying the Actual path and Expected path of file'
-//WebUI.verifyMatch(FilePath, 'C:\\Users\\robin\\Downloads\\Car Rental - Portal.csv', false)
-
-//Change to number of records viewed
-WebUI.click(findTestObject('Historic Pricing/Display Records'))
-WebUI.selectOptionByValue(findTestObject('Historic Pricing/Display Records'),'50',false)
-WebUI.click(findTestObject('Historic Pricing/Display Records'))
-WebUI.scrollToElement(findTestObject('Historic Pricing/Pagination'),1)
-
-//Sort Data Table
-WebUI.click(findTestObject('Historic Pricing/Data Table - Extract'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Extract'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Channel'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Channel'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Company'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Company'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Category'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Category'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Pickup Date'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Pickup Date'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Dropoff Date'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Dropoff Date'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Duration'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Duration'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Pickup Location'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Pickup Location'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Dropoff Location'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Dropoff Location'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Daily Rate'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Daily Rate'))
-
-WebUI.click(findTestObject('Historic Pricing/Data Table - Total Rate'))
-WebUI.click(findTestObject('Historic Pricing/Data Table - Total Rate'))
 
 //User Logs out
 'Switch back to default content'

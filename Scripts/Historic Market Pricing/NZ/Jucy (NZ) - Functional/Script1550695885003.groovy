@@ -42,22 +42,22 @@ WebUI.click(findTestObject('Historic Pricing/Category Type'))
 
 // Select Pickup Location
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Pickup Location'),'Auckland Airport', false) 
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Pickup Location'),0) //'Auckland Airport' 
 WebUI.click(findTestObject('Historic Pricing/Pickup Location'))
 
 // Select Dropoff Location
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Dropoff Location'),'Auckland Airport', false)
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Dropoff Location'),0) //'Auckland Airport'
 WebUI.click(findTestObject('Historic Pricing/Dropoff Location'))
 
 // Select Category Type
 WebUI.click(findTestObject('Historic Pricing/Category'))
-WebUI.selectOptionByValue(findTestObject('Historic Pricing/Category'),'ce925f44-8dfa-409c-bdf6-7b250edd4993', false) // Styla (Mazda 3 (2015-2017))
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Category'),3) //'ce925f44-8dfa-409c-bdf6-7b250edd4993' Styla (Mazda 3 (2015-2017))
 WebUI.click(findTestObject('Historic Pricing/Category'))
 
 // Select Dropoff Location
 WebUI.click(findTestObject('Historic Pricing/Duration'))
-WebUI.selectOptionByLabel(findTestObject('Historic Pricing/Duration'),'10', false)
+WebUI.selectOptionByIndex(findTestObject('Historic Pricing/Duration'),4) // '10'
 WebUI.click(findTestObject('Historic Pricing/Duration'))
 
 // Select Extract Date From
